@@ -35,7 +35,6 @@ class _InicioPageState extends State<InicioPage> {
     } else {
       tipoPantalla = "MOBIL";
     }
-
     return Scaffold(
       body: Container(
         child: Center(
