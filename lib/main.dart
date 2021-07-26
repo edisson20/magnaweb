@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:magnaweb/widgets/homePC.dart';
 
 void main() {
   runApp(MyApp());
@@ -9,6 +10,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
         primarySwatch: Colors.blue,
@@ -35,12 +37,17 @@ class _InicioPageState extends State<InicioPage> {
     } else {
       tipoPantalla = "MOBIL";
     }
-    return Scaffold(
-      body: Container(
-        child: Center(
-          child: Text(tipoPantalla),
+// Escoje Tipo de Pantalla
+    if (tipoPantalla == "PC") {
+      return homePC();
+    } else {
+      return Scaffold(
+        body: Container(
+          child: Center(
+            child: Text(tipoPantalla),
+          ),
         ),
-      ),
-    );
+      );
+    }
   }
 }
